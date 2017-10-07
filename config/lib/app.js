@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 var config = require('../config'),
+  mongoose = require('mongoose'),
   mongooseService = require('./mongoose'),
   express = require('./express'),
   chalk = require('chalk'),
