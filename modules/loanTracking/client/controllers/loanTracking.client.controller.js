@@ -5,33 +5,30 @@
     .module('loanTracking')
     .controller('LoanTrackingController', LoanTrackingController) ;
   
-  LoanTrackingController.$inject = ['$scope'] ;
+  LoanTrackingController.$inject = ['$scope', 'Service_LoanTracking'] ;
   
-  function LoanTrackingController($scope) {
+  function LoanTrackingController($scope, Service_LoanTracking) {
     var vm = this ;
     
-    /*
-      var mongoose = require('mongoose') ;
+    console.log("TEST A\n") ;
+    
+    //vm.loans = Service_LoanTracking.query() ;
+    
+    vm.query_all_client = query_all_client ;
+    vm.test = test ;
+    
+    // Queries all loans belonging to this client, saving them to the scope
+    function query_all_client() {
+      console.log("TEST B\n") ;
       
-      exports.do_test = function() {
+      Service_LoanTracking.find_all() ;
+    }
+    
+    // Test function
+    function test() {
+      console.log("This is a test...") ;
       
-      var loanSchema = new mongoose.Schema({
-        verif_id: { type: Number,  required: true, unique: true },
-        type: { type: String,  required: true }, 
-        status: { type: String,  required: true },
-        step: { type: String,  required: true },
-        info: { type: String },
-      });
-      
-      var Loans_Test = mongoose.model('test_loans', loanSchema);
-      
-      module.exports = Loans_Test ;
-      
-      Loans_Test.find( {}, function(err, loans) {
-        if (err) throw err ;
-        
-        console.log(loans) ;
-      }) ;
-    */
+      query_all_client() ;
+    }
   }
 }());

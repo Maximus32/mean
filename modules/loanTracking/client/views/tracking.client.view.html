@@ -1,3 +1,24 @@
-<div>
+<div">
   <h3 class="col-xs-12 text-center">What is this nonsense</h3>
+  
+  <a class="btn btn-danger" ng-click="vm.test();">Check it out</a>
+  
+  <div class="tableWrapper">
+      <table class="table">
+        <tr>
+          <th>Verification Number</th>
+          <th>Loan Type</th>
+          <th>Status</th>
+          <th>Addtl. Info</th>
+          <th></th>
+        </tr>
+        
+        <tr ng-repeat="loan in vm.loans">
+          <td>{{loan.verif_id}}</td>
+          <td>{{loan.type}}</td>
+          <td>{{loan.status}}</td>
+          <td>{{loan.info}}</td>
+        </tr>
+      </table>
+    </div>
 </div>

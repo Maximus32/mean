@@ -9,7 +9,7 @@
 
   function ArticlesAdminController($scope, $state, $window, article, Authentication, Notification) {
     var vm = this;
-
+    
     vm.article = article;
     vm.authentication = Authentication;
     vm.form = {};
